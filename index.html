@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Althini Textil</title>
+<meta name="description" content="Althini Textil: venta de telas en general, nacionales e importadas, al por mayor y menor. Jr. Antonio Bazo 830, La Victoria, Lima.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F6F8; --surface:#FFFFFF; --ink:#14172B; --muted:#4F5570; --indigo:#26357A; --gold:#C98F0A; --line:#D9DCE6; --on-accent:#FFFFFF;
+  --f-head:'Bricolage Grotesque','Arial Narrow',Arial,sans-serif; --f-body:'Public Sans',system-ui,Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1224;--surface:#181C36;--ink:#EEF0F8;--muted:#A6ACC6;--indigo:#8FA0F2;--gold:#E8B53A;--line:#2C3257;--on-accent:#0F1224}}
+:root[data-theme="dark"]{--bg:#0F1224;--surface:#181C36;--ink:#EEF0F8;--muted:#A6ACC6;--indigo:#8FA0F2;--gold:#E8B53A;--line:#2C3257;--on-accent:#0F1224}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 var(--f-body)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(1.25rem,env(safe-area-inset-right)) 0 max(1.25rem,env(safe-area-inset-left))}
+h1,h2,h3{font-family:var(--f-head);line-height:1.05;margin:0}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+header{padding:1.1rem 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.brand{font:800 1.25rem var(--f-head);letter-spacing:-.01em}
+.nav a{color:var(--muted);text-decoration:none;font-weight:500;margin-left:1.25rem}
+.nav a:hover{color:var(--ink)}
+
+.hero{padding:3.5rem 0 3rem}
+.hero h1{font-size:clamp(2.6rem,8vw,5.4rem);font-weight:800;letter-spacing:-.03em;max-width:12ch}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.2rem;margin:1.25rem 0 1.75rem}
+.btn{display:inline-block;background:var(--indigo);color:var(--on-accent);font:600 1.05rem var(--f-body);padding:.9rem 1.6rem;border-radius:999px;text-decoration:none}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--line);margin-left:.5rem}
+
+.strip{display:flex;height:clamp(90px,16vw,160px);margin-top:3rem;border-radius:6px;overflow:hidden}
+.strip i{flex:1}
+
+section{padding:3rem 0}
+section h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-.02em}
+.sub{color:var(--muted);max-width:52ch;margin:.6rem 0 2rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.5rem}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.75rem .75rem 1rem}
+.sw{height:130px;border-radius:3px;margin-bottom:.8rem;-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
+.tile h3{font-size:1.2rem;font-weight:700}
+.tile p{margin:.25rem 0 0;color:var(--muted);font-size:.95rem;line-height:1.4}
+
+.p-weave{background:repeating-linear-gradient(0deg,#0000 0 3px,#0002 3px 4px),repeating-linear-gradient(90deg,#0000 0 3px,#0002 3px 4px),var(--c)}
+.p-sheen{background:linear-gradient(115deg,#0000 0%,#fff5 28%,#0000 45%,#fff7 62%,#0000 80%),var(--c)}
+.p-net{background:radial-gradient(#fff9 1.6px,#0000 2px) 0 0/9px 9px,radial-gradient(#fff6 1.6px,#0000 2px) 4.5px 4.5px/9px 9px,var(--c)}
+.p-pile{background:radial-gradient(#fff3 1px,#0000 1.5px) 0 0/5px 5px,radial-gradient(#0003 1px,#0000 1.5px) 2.5px 2.5px/5px 5px,var(--c)}
+.p-cord{background:repeating-linear-gradient(90deg,#0000 0 6px,#0003 6px 8px),var(--c)}
+.p-seq{background:radial-gradient(circle at 30% 30%,#fffa 0 1.5px,#0000 2px) 0 0/10px 10px,radial-gradient(circle,#0000 0 3.5px,#0003 4px,#0000 4.5px) 0 0/10px 10px,var(--c)}
+.p-pleat{background:repeating-linear-gradient(90deg,#0003 0 2px,#fff2 2px 10px,#0002 10px 18px),var(--c)}
+
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.5rem}
+.fc{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.75rem .75rem 1.1rem}
+.fc .sw{height:190px}
+.fc h3{font-size:1.4rem}
+.fc p{margin:.25rem 0 .8rem;color:var(--muted);font-size:.95rem;line-height:1.4}
+.cn{font-size:.9rem;font-weight:600;margin-bottom:.5rem;min-height:1.4em}
+.dots{display:flex;flex-wrap:wrap;gap:.45rem}
+.dots button{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);background:var(--c);cursor:pointer;padding:0}
+.dots button[aria-pressed=true]{border-color:var(--ink);box-shadow:0 0 0 2px var(--surface) inset}
+.p-org{background:linear-gradient(135deg,#fff5,#0000 40%,#fff4 60%,#0000),repeating-linear-gradient(90deg,#fff2 0 1px,#0000 1px 4px),var(--c)}
+.srow{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-bottom:1.75rem}
+.search{flex:1 1 280px;max-width:420px;font:inherit;padding:.8rem 1.1rem;border:2px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink)}
+button.btn{border:0;cursor:pointer}
+.search:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.fam{margin-bottom:1.75rem}
+.fam h3{font-size:1.25rem;margin-bottom:.6rem}
+.fam h3 small{color:var(--muted);font:500 .9rem var(--f-body);margin-left:.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.3rem .85rem;font-size:.95rem}
+#none{color:var(--muted);display:none}
+.band{background:var(--indigo);color:var(--on-accent)}
+.band h2{max-width:20ch}
+.pts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:2rem}
+.pts h3{font-size:1.25rem;margin-bottom:.35rem}
+.pts p{margin:0;opacity:.88}
+
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;align-items:start}
+.contact dt{font:700 1rem var(--f-head);color:var(--gold);margin-top:1rem}
+.contact dd{margin:.1rem 0 0}
+.ph{background:#C98F0A33;border-radius:3px;padding:0 .3em}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-size:.9rem}
+@media (max-width:560px){.nav a{margin-left:.9rem}.hero{padding-top:2.2rem}.btn{display:block;text-align:center}.btn.alt{margin:.6rem 0 0}.srow .btn{width:100%}.fc .sw{height:150px}}
+@media (pointer:coarse){.dots{gap:.6rem}.dots button{width:38px;height:38px}.chips span{padding:.45rem .95rem}.search{padding:.95rem 1.2rem}}
+@media (min-width:1400px){body{font-size:1.1rem}.wrap{max-width:1240px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand">Althini Textil</div>
+  <nav class="nav"><a href="#catalogo">Telas</a><a href="#contacto">Contacto</a></nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <h1>Telas para cada proyecto.</h1>
+  <p>Venta de telas en general, nacionales e importadas, al por mayor y menor. Escríbenos qué vas a hacer y te ayudamos a elegir.</p>
+  <a class="btn" id="wa1" href="#contacto">Escribir por WhatsApp</a>
+  <a class="btn alt" href="#principales">Ver las telas</a>
+  <div class="strip" aria-hidden="true">
+    <i style="background:#26357A"></i><i style="background:#C98F0A"></i><i style="background:#B3261E"></i><i style="background:#3F7F78"></i><i style="background:#6B1D4F"></i><i style="background:#E4DCC8"></i><i style="background:#14172B"></i><i style="background:#E8A4B8"></i>
+  </div>
+</div>
+
+<section id="principales"><div class="wrap">
+  <h2>Nuestras telas principales</h2>
+  <p class="sub">Toca un color para verlo en la tela.</p>
+  <div class="feat" id="feat"></div>
+</div></section>
+
+<section id="catalogo"><div class="wrap">
+  <h2>Todas nuestras telas</h2>
+  <p class="sub">Más de 140 telas, nacionales e importadas. Busca por nombre o mira la lista completa.</p>
+  <div class="srow">
+    <input class="search" id="q" type="search" placeholder="Buscar tela (ej. tull, tocuyo, peluche)" aria-label="Buscar tela">
+    <button class="btn" id="all" type="button" aria-controls="cat">Ver todas las telas</button>
+  </div>
+  <div id="cat"></div>
+  <p id="none">No encontramos esa tela en la lista, pero escríbenos: puede que la tengamos.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>Ven con tu idea, nosotros ponemos la tela.</h2>
+  <div class="pts">
+    <div><h3>Por mayor y menor</h3><p>Desde un corte pequeño hasta pedidos grandes.</p></div>
+    <div><h3>Nacionales e importadas</h3><p>Telas en general, para todo tipo de proyecto.</p></div>
+    <div><h3>Servicio de acolchado</h3><p>Además de vender la tela, la acolchamos por ti.</p></div>
+  </div>
+</div></section>
+
+<section id="contacto"><div class="wrap contact">
+  <div>
+    <h2>Hablemos</h2>
+    <p class="sub">Cuéntanos qué necesitas y cuántos metros. Te respondemos lo antes posible.</p>
+    <a class="btn" id="wa2" href="#contacto">Escribir por WhatsApp</a>
+    <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Jr.+Antonio+Bazo+830+La+Victoria+Lima" target="_blank" rel="noopener">Cómo llegar</a>
+  </div>
+  <dl>
+    <dt>Dirección</dt><dd>Jr. Antonio Bazo 830, tiendas 102 y 103, 1er piso<br>La Victoria, Lima</dd>
+    <dt>Ventas</dt><dd>Al por mayor y menor. Emitimos facturas.</dd>
+    <dt>Horario</dt><dd>Lunes a sábado: 9:30 a. m. a 8:00 p. m.<br>Domingos: 11:00 a. m. a 5:00 p. m.<br>Feriados y días festivos: 10:30 a. m. a 5:00 p. m.</dd>
+    <dt>Teléfono</dt><dd><a href="tel:+51967258719" style="color:inherit">+51 967 258 719</a><br><a href="tel:+51932577670" style="color:inherit">+51 932 577 670</a></dd>
+  </dl>
+</div></section>
+</main>
+
+<footer><div class="wrap">Althini Textil · RUC 20607422819 · Empresa registrada en 2021, con experiencia en telas desde los años 2000</div></footer>
+
+<script>
+// Cambiar por el número real, con código de país y sin signos (ej. 51987654321)
+var WA_NUMBER = "51967258719";
+var msg = encodeURIComponent("Hola, quisiera consultar por telas.");
+["wa1","wa2"].forEach(function(id){
+  var el=document.getElementById(id);
+  if(el){el.href="https://wa.me/"+WA_NUMBER+"?text="+msg;el.target="_blank";el.rel="noopener"}
+});
+// Colores de ejemplo: reemplazar por los colores reales de cada tela
+var COLORS=[["Blanco","#F2F2F2"],["Negro","#141414"],["Rojo","#B3261E"],["Azul rey","#26357A"],["Verde","#2F7D5B"],["Fucsia","#C2306F"],["Dorado","#C98F0A"],["Celeste","#7FB7D9"]];
+var FEAT=[
+ {n:"Razo",d:"Brillo suave y buena caída.",k:"sheen"},
+ {n:"Poliseda",d:"Suave y liviana, con caída fluida.",k:"sheen"},
+ {n:"Tull",d:"Liviano para fiestas y detalles.",k:"net"},
+ {n:"Satín licrado",d:"Brillante y con elasticidad.",k:"sheen"},
+ {n:"Organza",d:"Ligera y translúcida.",k:"org"}
+];
+var box=document.getElementById("feat");
+FEAT.forEach(function(f){
+  var c=document.createElement("div");c.className="fc";
+  var sw=document.createElement("div");sw.className="sw p-"+f.k;sw.style.setProperty("--c",COLORS[0][1]);
+  var h=document.createElement("h3");h.textContent=f.n;
+  var p=document.createElement("p");p.textContent=f.d;
+  var cn=document.createElement("div");cn.className="cn";cn.textContent=COLORS[0][0];
+  var dots=document.createElement("div");dots.className="dots";
+  COLORS.forEach(function(col,i){
+    var b=document.createElement("button");b.type="button";b.style.setProperty("--c",col[1]);
+    b.setAttribute("aria-label",col[0]);b.setAttribute("aria-pressed",i===0);
+    b.onclick=function(){
+      sw.style.setProperty("--c",col[1]);cn.textContent=col[0];
+      dots.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+    };
+    dots.appendChild(b);
+  });
+  [sw,h,p,cn,dots].forEach(function(e){c.appendChild(e)});
+  box.appendChild(c);
+});
+
+var FAM=[
+["Razo, satín y seda","Razo|Razo brocado|Razo estampado|Satín|Satín zara|Seda|Seda estampada|Poliseda|Lamé|Lamé licrado"],
+["Tafeta","Tafeta|Tafeta bordada|Tafeta camuflada|Tafeta platinada|Tafeta impermeable"],
+["Tull","Tull can can|Tull con cintas|Tull con lentejuela|Tull cortinero|Tull escarchado|Tull fantasía|Tull floreado|Tull licrado|Tull mesh|Tull power|Tull wall|Tull bordado licrado|Tull araña"],
+["Organza y gasa","Organza|Organza bordado|Gasa americana|Gasa estampada|Gasa pañal"],
+["Encajes","Encaje bruselas|Encaje caracol|Encaje con cinta pegada|Encaje licrado|Brusela"],
+["Lentejuelas","Lentejuela arcoíris|Lentejuela bebé|Lentejuela leopardo|Lentejuela pegada|Lentejuela reversible|Lentejuela tornasol|Lentejuela dispersa|Lentejuela rombitos"],
+["Licras y elásticas","Licra americana|Licra brasilera|Licra estampada|Suplex estampado|Suplex grueso|Power net para fajas|Stone látex|Stone serpiente|Stone camuflado|Neopreno|Escuba crepe"],
+["Tela mojada y látex","Tela mojada|Tela mojada corrugada|Látex|Corrugado brilloso"],
+["Peluches y afelpadas","Borlón|Casaquero peluche|Felpa|Felpa económica|Franela de limpieza|Mecha larga|Peluche doble cara|Peluche estampado|Peluche una cara|Plush|Polar|Polar estampado|Terciopelo|Pana|Soft"],
+["Confección y vestir","Chalis|Chalis estampado|Chalis crepe|Lino sermat|Lino shantu|Popelina|Vichy|Venecia|Versage|Tricotex|Paño lensy|Mitex|Notex|Nova|Catania|Yakar|Yakar estampado|Suet estampado|Piel de ángel|Piel de durazno|Piel de gallina|Polynan|Polynan brilloso|Polyestresh|Microfibra"],
+["Casaqueros y sintéticos","Taslan bomber|Taslan gamuzado|Taslan jebe|Taslan camuflado|Hipora|Fibra de 60 g|Fibra de 120 g|Termosellado|Napa|Cuerina"],
+["Cortinas y hogar","Pelón cortinero|Pelón 35 g|Pelón 60 g|Pelón 75 g|Mantelero|Forro de baño|Tela para secador|Bramante 80 g|Bramante acolchado|Bramante 130 g|Bramante estampado|Bramante 320 g|Bombasí|Cañamazo|Shipibo|Yute|Lona orillo azul|Lona orillo rojo|Lona orillo verde|Drill industrial|Drill tecnología"],
+["Tocuyo","Tocuyo 1056|Tocuyo 1066|Tocuyo 1280|Tocuyo 1800|Tocuyo económico"],
+["Entretelas","Entretela|Entretela 6020M1|Entretela 50-20M"]
+];
+function norm(t){return t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/z/g,"s")}
+var cat=document.getElementById("cat"),q=document.getElementById("q"),none=document.getElementById("none");
+function draw(){
+  var t=norm(q.value.trim()),n=0;cat.textContent="";btn.textContent=open?"Ocultar la lista":"Ver todas las telas";btn.setAttribute("aria-expanded",open);btn.style.display=t?"none":"";if(!t&&!open){none.style.display="none";return}
+  FAM.forEach(function(f){
+    var items=f[1].split("|").filter(function(x){return !t||norm(x).indexOf(t)>-1||norm(f[0]).indexOf(t)>-1});
+    if(!items.length)return;n+=items.length;
+    var d=document.createElement("div");d.className="fam";
+    var h=document.createElement("h3");h.textContent=f[0];
+    var sm=document.createElement("small");sm.textContent=items.length;h.appendChild(sm);
+    var c=document.createElement("div");c.className="chips";
+    items.forEach(function(x){var e=document.createElement("span");e.textContent=x;c.appendChild(e)});
+    d.appendChild(h);d.appendChild(c);cat.appendChild(d);
+  });
+  none.style.display=n?"none":"block";
+}
+var open=false,btn=document.getElementById("all");
+btn.onclick=function(){open=!open;draw()};
+q.addEventListener("input",draw);draw();
+</script>
+</body>
+</html>
